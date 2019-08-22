@@ -18,7 +18,7 @@ class Service {
   // }
   
   async create (data) {
-    return this.loginApi.login(data.username, data.password);
+    return await this.loginApi.login(data.username, data.password);
   }
 }
 

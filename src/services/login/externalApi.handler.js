@@ -8,8 +8,8 @@ class LoginApi {
 
     async login(username, password) {
        if (username && password) {
-        const body = {username, password}
-        return await this.loginApi(body);    
+        const body = {username, password};
+        return await this.loginApi(body);
        }
        else {
         return [];
