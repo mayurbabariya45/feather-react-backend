@@ -14,4 +14,4 @@ const request = async (uri, method = 'GET') => {
 
 
 
-module.exports.LOGIN_API = async (body) => await request(`https://linux5.sima.io/pcs2/function=AuthenticateUserOnly&username=${body.username}&password=${body.password}`);
+module.exports.LOGIN_API = async (body) => await request(` https://linux5.sima.io/pcs2/api.php?function=AuthenticateUserOnly&username=${body.username}&password=${body.password}`);
