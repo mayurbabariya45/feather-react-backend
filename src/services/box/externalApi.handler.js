@@ -7,9 +7,9 @@ class BoxApi {
         this.boxStatusApi = apis.BOX_STATUS_API;
      }
 
-    async boxId(barcode) {
-       if (barcode) {
-        const body = {barcode}
+    async boxId(data) {
+       if (data) {
+        const body = {data}
         return await this.boxIdApi(body);
        }
        else {
@@ -18,9 +18,9 @@ class BoxApi {
        
     }
     
-    async boxStatus(barcode) {
-       if (barcode) {
-        const body = {barcode}
+    async boxStatus(data) {
+       if (data) {
+        const body = {data}
         return await this.boxStatusApi(body);
        }
        else {

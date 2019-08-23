@@ -8,9 +8,9 @@ class ClockApi {
         this.clockInfoApi = apis.CLOCK_INFO_API;
      }
 
-    async clockIn(boxId, userId, comment) {
-       if (boxId && userId) {
-        const body = {boxId, userId, comment};
+    async clockIn(data) {
+       if (data) {
+        const body = {data};
         return await this.clockInApi(body);
        }
        else {
@@ -18,9 +18,9 @@ class ClockApi {
        }       
     }
     
-    async clockOut(boxId, userId, state, comment) {
-       if (boxId && userId && state) {
-        const body = {boxId, userId, state, comment};
+    async clockOut(data) {
+       if (data) {
+        const body = {data};
         return await this.clockOutApi(body);
        }
        else {
@@ -28,9 +28,9 @@ class ClockApi {
        }       
     }
     
-    async clockInfo(userId) {
-       if (userId) {
-        const body = {userId};
+    async clockInfo(data) {
+       if (data) {
+        const body = {data};
         return await this.clockInfoApi(body);
        }
        else {
