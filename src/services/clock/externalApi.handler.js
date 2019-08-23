@@ -10,7 +10,7 @@ class ClockApi {
 
     async clockIn(data) {
        if (data) {
-        const body = {data};
+         const body = {...data};
         return await this.clockInApi(body);
        }
        else {
@@ -20,7 +20,7 @@ class ClockApi {
     
     async clockOut(data) {
        if (data) {
-        const body = {data};
+         const body = {...data};
         return await this.clockOutApi(body);
        }
        else {
@@ -30,7 +30,9 @@ class ClockApi {
     
     async clockInfo(data) {
        if (data) {
-        const body = {data};
+        const body = {...data};
+        console.log(body, "body");
+        
         return await this.clockInfoApi(body);
        }
        else {

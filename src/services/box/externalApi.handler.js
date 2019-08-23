@@ -9,7 +9,7 @@ class BoxApi {
 
     async boxId(data) {
        if (data) {
-        const body = {data}
+        const body = data
         return await this.boxIdApi(body);
        }
        else {
@@ -20,7 +20,7 @@ class BoxApi {
     
     async boxStatus(data) {
        if (data) {
-        const body = {data}
+        const body = data
         return await this.boxStatusApi(body);
        }
        else {

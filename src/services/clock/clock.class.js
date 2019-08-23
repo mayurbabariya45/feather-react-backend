@@ -7,6 +7,8 @@ class Service {
   }
 
   async create (data) {
+    console.log(data.userId);
+    
     if (data.clockIn) 
       return await this.clockApi.clockIn(data);
     else if (data.clockOut) 
