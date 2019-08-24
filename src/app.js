@@ -39,6 +39,9 @@ app.on('connection', connection => app.channel('everybody').join(connection));
 
 // Publish all events to the `everybody` channel
 app.publish(() => app.channel('everybody'));
+app.service('clock').publish('created', () => app.channel('everybody'));
+app.service('messages').publish('created', () => app.channel('everybody'));
+
 
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
@@ -53,14 +56,14 @@ app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
 
-const memory = require('feathers-memory');
+// const memory = require('feathers-memory');
 
-// Initialize the messages service
-app.use('messages', memory({
-  paginate: {
-    default: 10,
-    max: 25
-  }
-}));
+// // Initialize the messages service
+// app.use('messages', memory({
+//   paginate: {
+//     default: 10,
+//     max: 25
+//   }
+// }));
 
 module.exports = app;
