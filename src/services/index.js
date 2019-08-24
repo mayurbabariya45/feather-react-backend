@@ -3,6 +3,7 @@ const clock = require('./clock/clock.service.js');
 const box = require('./box/box.service.js');
 const prodtask = require('./prodtask/prodtask.service.js');
 const states = require('./states/states.service.js');
+const messages = require('./messages/messages.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(login);
@@ -10,4 +11,5 @@ module.exports = function (app) {
   app.configure(box);
   app.configure(prodtask);
   app.configure(states);
+  app.configure(messages);
 };
