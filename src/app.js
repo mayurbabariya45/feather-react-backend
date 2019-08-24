@@ -53,4 +53,14 @@ app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
 
+const memory = require('feathers-memory');
+
+// Initialize the messages service
+app.use('messages', memory({
+  paginate: {
+    default: 10,
+    max: 25
+  }
+}));
+
 module.exports = app;
