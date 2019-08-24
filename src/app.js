@@ -39,8 +39,8 @@ app.on('connection', connection => app.channel('everybody').join(connection));
 
 // Publish all events to the `everybody` channel
 app.publish(() => app.channel('everybody'));
-app.service('clock').publish('created', () => app.channel('everybody'));
-app.service('messages').publish('created', () => app.channel('everybody'));
+// app.service('clock').publish('created', () => app.channel('everybody'));
+// app.service('messages').publish('created', () => app.channel('everybody'));
 
 
 // Configure other middleware (see `middleware/index.js`)
